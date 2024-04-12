@@ -1,0 +1,161 @@
+.tant-tab-tooltip {
+    padding-top: 0 !important;
+    min-width: 150px;
+    max-width: 300px;
+    word-break: break-all;
+    .ant-tooltip-arrow {
+        display: none;
+    }
+    .ant-tooltip-content {
+        margin-top: 0 !important;
+    }
+}
+
+div.tant-tab {
+    background-color: var(--tant-fill-color-fill1-2);
+    border-bottom: 1px solid var(--tant-border-color-border1-1);
+    border-right: 1px solid var(--tant-border-color-border1-1);
+    overflow: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-fill-hover);
+        .tant-tab-icon {
+            opacity: 1;
+        }
+
+        .tant-tab-name {
+            color: var(--tant-text-gray-color-text1-2);
+        }
+
+        .tant-tab-oper {
+            .tant-tab-oper-shadow {
+                background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-secondary-color-secondary-fill-hover) 100%);
+            }
+
+            .tant-tab-oper-shadow-active {
+                background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-secondary-color-secondary-fill-hover) 100%);
+            }
+
+            .tant-tab-oper-bg,
+            .tant-tab-oper-bg-active,
+            .tant-tab-padding,
+            .tant-tab-padding-active {
+                background-color: var(--tant-secondary-color-secondary-fill-hover);
+            }
+        }
+    }
+
+    .tant-tab-icon {
+        color: var(--tant-primary-color-primary-default);
+        font-size: 16px;
+        margin-right: 4px;
+        opacity: 0.5;
+    }
+
+    .tant-tab-name {
+        color: var(--tant-text-gray-color-text1-3);
+        overflow: hidden;
+        flex-grow: 1;
+        white-space: nowrap;
+    }
+
+    .tant-tab-oper {
+        position: absolute;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        right: 0px;
+        align-items: center;
+
+        .tant-tab-oper-shadow {
+            width: 16px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-fill-color-fill1-2) 100%);
+        }
+
+        .tant-tab-oper-shadow-active {
+            background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-bg-white-color-bg1-1) 100%);
+        }
+
+        .tant-tab-padding {
+            width: 12px;
+            height: 100%;
+            background-color: var(--tant-fill-color-fill1-2);
+        }
+
+        .tant-tab-padding-active,
+        .tant-tab-oper-bg-active {
+            background-color: var(--tant-bg-white-color-bg1-1);
+        }
+
+        .tant-tab-oper-bg {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: var(--tant-fill-color-fill1-2);
+        }
+    }
+}
+
+div.tant-tab.rc-tab-active {
+    border-bottom: none;
+    background-color: var(--tant-bg-white-color-bg1-1);
+    .tant-tab-oper {
+        .tant-tab-oper-shadow-active {
+            background: linear-gradient(90deg, rgba(249, 249, 251, 0.25) 5.88%, var(--tant-bg-white-color-bg1-1) 100%);
+        }
+        .tant-tab-oper-bg-active,
+        .tant-tab-padding-active {
+            background-color: var(--tant-bg-white-color-bg1-1);
+        }
+    }
+
+    &:hover {
+        background-color: var(--tant-bg-white-color-bg1-1);
+        .tant-tab-icon {
+            opacity: 1;
+        }
+
+        .tant-tab-oper {
+            .tant-tab-oper-shadow-active {
+                background: linear-gradient(90deg, rgba(249, 249, 251, 0.25) 5.88%, var(--tant-bg-white-color-bg1-1) 100%);
+            }
+            .tant-tab-oper-bg-active,
+            .tant-tab-padding-active {
+                background-color: var(--tant-bg-white-color-bg1-1);
+            }
+        }
+    }
+    .tant-tab-icon {
+        opacity: 1;
+    }
+
+    .tant-tab-name {
+        color: var(--tant-text-gray-color-text1-2);
+    }
+}
+
+div.tant-tab.rc-tab-dragging {
+    box-shadow: var(--tant-small-shadow-small-bottom);
+}
+div.tant-tabs-nav-contextmenu {
+    background-color: var(--tant-bg-white-color-bg1-1);
+    box-shadow: var(--tant-small-shadow-small-bottom);
+    .xm-context-menu-name {
+        color: var(--tant-text-gray-color-text1-2);
+    }
+    .xm-context-menu-icon {
+        color: var(--tant-text-gray-color-text1-3);
+    }
+    .xm-context-menu-shortcut-item {
+        background-color: var(--tant-fill-color-fill1-2);
+        border: 1px solid var(--tant-border-color-border1-1);
+        color: var(--tant-text-gray-color-text1-3);
+    }
+    .xm-context-menu-divider {
+        border-bottom: 1px solid var(--tant-border-color-border1-1);
+    }
+}

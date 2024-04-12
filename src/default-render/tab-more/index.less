@@ -1,0 +1,115 @@
+.tant-more-dropdown {
+    border-radius: 4px;
+    background-color: var(--tant-bg-white-color-bg1-1);
+    box-shadow: var(--tant-small-shadow-small-bottom);
+    width: 240px;
+
+    .tant-next-search-middle {
+        width: 100%;
+    }
+    .tant-more-dropdown-split {
+        border-top: 1px solid var(--tant-border-color-border1-1);
+    }
+
+    .tant-more-scroll {
+        padding: 4px 6px 0 4px;
+        display: flex;
+        flex-direction: column;
+        max-height: 312px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+        &:hover::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    .tant-next-empty.ant-empty .ant-empty-description {
+        width: unset;
+    }
+    .tant-next-empty {
+        padding: 12px 0;
+    }
+}
+
+.tant-more-tab {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    height: 30px;
+    padding: 4px 4px 4px 2px;
+    background-color: var(--tant-bg-white-color-bg1-1);
+    cursor: pointer !important;
+    margin-bottom: 4px;
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-fill-hover);
+
+        .tant-tab-oper > .tant-more-tab-unfixed,
+        .tant-tab-oper > .tant-more-tab-close {
+            display: inline-block !important;
+        }
+    }
+
+    .tant-more-tab-drag {
+        font-size: 16px;
+    }
+
+    .tant-more-tab-icon {
+        color: var(--tant-primary-color-primary-default);
+    }
+
+    .tant-more-tab-name {
+        color: var(--tant-text-gray-color-text1-2);
+        flex-grow: 1;
+        width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.tant-more-tab-active {
+    background-color: var(--tant-secondary-color-secondary-fill-active);
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-fill-active);
+    }
+}
+
+
+span.tant-more-tab-fixed,
+span.tant-more-tab-fixed-unsave,
+span.tant-more-tab-unsave {
+    display: flex;
+    border-radius: 4px;
+    padding: 4px;
+    color: var(--tant-primary-color-primary-default);
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-transp-hover);
+    }
+}
+
+.tant-more-tab-unfixed,
+.tant-more-tab-close {
+    display: none !important;
+}
+
+.tant-more-tab-unsave-hover {
+    &:hover {
+        span.tant-more-tab-unsave {
+            display: none;
+        }
+        .tant-more-tab-unfixed,
+        .tant-more-tab-close {
+            display: inline-block !important;
+        }
+    }
+}
+div.tant-more-tab-dragging {
+    box-shadow: var(--tant-small-shadow-small-bottom);
+}

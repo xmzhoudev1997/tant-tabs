@@ -1,6 +1,6 @@
 {
-  "name": "@xmzhou/rc-tabs",
-  "version": "0.1.6",
+  "name": "@tant/tabs",
+  "version": "0.2.0",
   "description": "一个基于React的标签页管理工具",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,10 +27,10 @@
       "@commitlint/config-conventional"
     ]
   },
-  "homepage": "https://xmzhoudev1997.github.io/rc-tabs/docs-dist/index.html",
+  "homepage": "https://xmzhoudev1997.github.io/tant-tabs/docs-dist/index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xmzhoudev1997/rc-tabs"
+    "url": "https://github.com/xmzhoudev1997/tant-tabs"
   },
   "lint-staged": {
     "*.{md,json}": [
@@ -78,9 +78,11 @@
     "stylelint": "^14.9.1"
   },
   "dependencies": {
-    "ahooks": "^3.7.10",
-    "classnames": "^2.5.1",
-    "lodash": "^4.17.21",
-    "react-beautiful-dnd": "^13.1.1"
+    "@tant/icons": "^1.17.5",
+    "@tant/rc-contextmenu": "^0.1.7",
+    "@tant/rc-tabs": "^0.2.4",
+    "@tant/ui-next": "^2.60.17",
+    "ahooks": "^3.7.11",
+    "lossless-json": "^4.0.1"
   }
 }

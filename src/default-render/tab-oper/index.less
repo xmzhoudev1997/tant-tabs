@@ -1,0 +1,38 @@
+.tant-tab-close {
+    display: flex;
+    border-radius: 2px;
+    padding: 2px;
+    color: var(--tant-text-gray-color-text1-3);
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-transp-hover);
+    }
+}
+
+span.tant-tab-fixed,
+span.tant-tab-fixed-unsave,
+span.tant-tab-unsave {
+    display: flex;
+    border-radius: 2px;
+    padding: 2px;
+    color: var(--tant-primary-color-primary-default);
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-transp-hover);
+    }
+
+}
+
+.tant-tab-unsave-hover {
+    .tant-tab-close {
+        display: none;
+    }
+    &:hover {
+        .tant-tab-close {
+            display: flex;
+        }
+        .tant-tab-unsave {
+            display: none;
+        }
+    }
+}

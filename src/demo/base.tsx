@@ -1,54 +1,19 @@
-// @ts-nocheck
-import { TabsNav, TabsPanel, useTabsNav } from '@xmzhou/rc-tabs';
+
+
 import React, { useRef } from 'react';
 import { useSetState } from 'ahooks';
+import { TabsNav } from '@tant/tabs';
+import { RC_TAB } from '@tant/rc-tabs';
+import { TaLanguage } from '@tant/icons';
+
 export default () => {
   const [state, setState] = useSetState<any>({
     tabList: [{
       key: '1',
-      label: '标签页1',
-      closeable: true,
-    },
-    {
-      key: '2',
-      label: '标签页2',
-      closeable: true,
-    },
-    {
-      key: '3',
-      label: '标签页3',
-      closeable: true,
-    },
-    {
-      key: '5',
-      label: '标签页5',
-      closeable: true,
-    },
-    {
-      key: '6',
-      label: '标签页6',
-      closeable: true,
-    },
-    {
-      key: '7',
-      label: '标签页7',
-      closeable: true,
-    },
-    {
-      key: '8',
-      label: '标签页8',
-      closeable: true,
-    },
-    {
-      key: '4',
-      label: '标签页4',
-      closeable: true,
-      fixed: true,
-    },],
+      label: '1',
+    }],
     tabKey: '1',
   });
-  const panelRef = useRef<any>(null);
-  useTabsNav(state.tabKey, state.tabList, (key: any, list: any) => setState({ tabKey: key, tabList: list }), panelRef);
   return (
     <div style={{
       display: 'flex',
@@ -58,20 +23,102 @@ export default () => {
       <TabsNav
         tabKey={state.tabKey}
         tabList={state.tabList}
-        onChange={(tabKey: any, tabList: any) => {
-          setState({ tabKey, tabList });
+        onTabKeyChange={(key: string) => {
+          setState({
+            tabKey: key,
+          })
         }}
-        panel={panelRef.current}
-        addRender={() => 1234}
+        tabDrag
+        onTabContextMenuClick={(key: string) => {
+          if (key === 'add') {
+            const obj = {
+              label: `空白标签页${Date.now()}`,
+              closeable: true,
+              fixed: false,
+              key: String(Date.now()),
+            };
+            state.tabList.push(obj);
+            setState({
+              tabKey: obj.key,
+              tabList: [...state.tabList]
+            })
+          }
+        }}
+        tabIconRender={() => {
+          return <TaLanguage style={{ display: 'flex' }} />
+        }}
+        tabContextMenus={(tab: RC_TAB) => {
+          const contextMenus = [
+            {
+              key: 'fixed',
+              label: tab.fixed ? '取消固定' : '固定标签页',
+            },
+            {
+              key: 'divider1',
+              type: 'divider',
+            },
+            {
+              key: 'close-other',
+              label: '关闭其他',
+            },
+            {
+              key: 'close-right',
+              label: '关闭右侧',
+              shortcutKeys: ['command'],
+            },
+            {
+              key: 'close-all',
+              label: '关闭所有',
+            },
+            {
+              key: 'close-saved',
+              label: '关闭已保存',
+            },
+          ];
+          if (tab.closeable) {
+            contextMenus.splice(2, 0, {
+              key: 'close',
+              label: '关闭',
+            });
+          }
+          return contextMenus;
+        }}
+        // tabTipRender={(tab: XM_TAB) => {
+        //   return <>
+        //     <div style={{
+        //       display: 'flex',
+        //       alignItems: 'center',
+        //       columnGap: 4,
+        //       color: 'var(--tant-text-white-color-text2-1)'
+        //     }}>
+        //       <TaLanguage style={{ color: '#1E76F0' }} />
+        //       {tab.label}
+        //     </div>
+        //     <div style={{
+        //       color: '#FFFFFFB2',
+        //       font: 'var(    --tant-description-font-description-regular)'
+        //     }}>
+        //       最近编辑：03/28 19:00
+        //     </div>
+        //   </>
+        // }}
       />
-      <TabsPanel
+      {/* <TabsPanel
         ref={panelRef}
       >
-        {(tabKey: any, data: any, handleUpdate: any) => {
-          const tab = state.tabList.find((t: any) => t.key === tabKey);
-          return <div style={{ height: '100%' }}  suppressContentEditableWarning contentEditable >{tab?.label}</div>;
-        }} 
-      </TabsPanel>
+        {(tabKey: string) => {
+          console.log(tabKey);
+          const tab = state.tabList.find(t => t.key === tabKey);
+          return <div
+            style={{ height: '100%' }}
+            suppressContentEditableWarning
+            contentEditable
+            onInput={(e) => {
+              navRef.current?.edited(tabKey, true)
+            }}
+          >{tab?.label}</div>;
+        }}
+      </TabsPanel> */}
     </div>
   );
 }
