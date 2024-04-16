@@ -4,8 +4,8 @@ import { RC_TAB } from '@tant/rc-tabs';
 import useData from './hook';
 import './index.less';
 import { TABS_NAV } from 'xm-tabs/nav/props';
-import { RCContextMenu, RC_CONTEXT_MENU } from '@tant/rc-contextmenu';
 import classNames from 'classnames';
+import { RC_CONTEXT_MENU } from '../../nav/use-context-menu/props';
 
 interface Props {
     tab: RC_TAB,

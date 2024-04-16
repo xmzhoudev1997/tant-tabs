@@ -1,6 +1,6 @@
 import { RC_TABS_NAV, RC_TAB } from '@tant/rc-tabs';
 import { ReactNode } from 'react';
-import { RC_CONTEXT_MENU } from '@tant/rc-contextmenu';
+import { RC_CONTEXT_MENU } from './use-context-menu/props';
 
 export type TABS_NAV_CONTEXT_MENU_KEY = 'fixed' | 'close' | 'close-all' | 'close-other' | 'close-right' | 'close-save' | 'add' | string;
 
