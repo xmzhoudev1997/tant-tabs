@@ -1,5 +1,5 @@
 
-
+// @ts-nocheck
 import React, { useRef } from 'react';
 import { useSetState } from 'ahooks';
 import { TabsNav } from '@tant/tabs';
@@ -29,6 +29,7 @@ export default () => {
           })
         }}
         tabDrag
+        tabTipRender={() => 123}
         onTabContextMenuClick={(key: string) => {
           if (key === 'add') {
             const obj = {

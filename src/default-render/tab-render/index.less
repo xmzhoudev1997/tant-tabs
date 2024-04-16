@@ -19,6 +19,9 @@ div.tant-tab {
     display: flex;
     align-items: center;
     position: relative;
+    &[context-menu='true'] {
+        pointer-events: none;
+    }
 
     &:hover {
         background-color: var(--tant-secondary-color-secondary-fill-hover);

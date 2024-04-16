@@ -41,17 +41,7 @@ const Index: FC<Props> = ({
             </div>
         }
     </>
-    node = React.cloneElement(originTabNode as any, { children: node });
-    if (contextMenus?.length) {
-        node =
-            <RCContextMenu
-                className='tant-tabs-nav-contextmenu'
-                visible={key === tab.key}
-                onVisibleChange={(v: boolean) => setKey(v ? tab.key : '')}
-                onChange={(k: string) => handleClick(k, tab)}
-                menu={contextMenus}
-            >{node}</RCContextMenu>;
-    }
+    node = React.cloneElement(originTabNode as any, { children: node, 'data-key': tab.key });
     if (tipNode) {
         node = <Tooltip
             placement='bottomLeft'

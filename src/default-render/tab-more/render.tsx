@@ -52,7 +52,7 @@ const Index: FC<Props> = ({
         <Search value={kwd} onChange={setKwd as any} size="middle" bordered={false} allowClear />
         <div className="tant-more-dropdown-split" />
         {
-            !filterList.length ? <Empty /> :
+            !filterList?.length ? <Empty /> :
                 <div className="tant-more-scroll" ref={scrollRef}>
                     {
                         filterList?.map((tab) => tabNodeRender(tab))

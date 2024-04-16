@@ -11,6 +11,7 @@ export default (
 ) => {
     return (
         <Render
+            key={tab.key}
             tab={tab}
             active={props.tabKey === tab?.key}
             originTabNode={tabNode}

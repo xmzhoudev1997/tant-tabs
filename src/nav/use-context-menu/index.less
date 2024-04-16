@@ -1,0 +1,75 @@
+.rc-context-menu {
+    position: fixed;
+    padding: 4px;
+    border-radius: 4px;
+    z-index: 99999;
+    background-color: var(--tant-bg-white-color-bg1-1);
+    box-shadow: var(--tant-small-shadow-small-bottom);
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    .rc-context-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: default;
+
+        .rc-context-menu-icon {
+            margin-right: 2px;
+            color: var(--tant-text-gray-color-text1-3);
+        }
+
+        .rc-context-menu-name {
+            flex-grow: 1;
+            width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--tant-text-gray-color-text1-2);
+        }
+
+        .rc-context-menu-shortcut {
+            margin-left: 4px;
+        }
+
+        &:hover {
+            background-color: var(--tant-primary-color-primary-fill-hover);
+        }
+    }
+
+    .rc-context-menu-divider {
+        margin-bottom: 4px;
+        margin-top: 4px;
+        border-bottom: 1px solid var(--tant-border-color-border1-1);
+        height: 0;
+        list-style-type: none;
+
+        &::marker {
+            display: none;
+        }
+    }
+
+    .rc-context-menu-shortcut {
+        display: flex;
+        align-items: center;
+        column-gap: 2px;
+
+        .rc-context-menu-shortcut-item {
+            width: 18px;
+            height: 18px;
+            border-radius: 2px;
+            background-color: var(--tant-fill-color-fill1-2);
+            border: 1px solid var(--tant-border-color-border1-1);
+            color: var(--tant-text-gray-color-text1-3);
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: center;
+        }
+    }
+}
