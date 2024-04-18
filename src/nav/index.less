@@ -2,6 +2,9 @@
     .rc-tabs-nav {
         background-color: var(--tant-bg-gray-color-bg2-1);
     }
+    &:has(div.rc-tab-dragging) {
+        pointer-events: none;
+    }
     .rc-tabs-bar {
         width: 0;
     }

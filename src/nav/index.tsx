@@ -26,8 +26,8 @@ const Index: FC<TABS_NAV> = (props) => {
                 tabClassName={classNames(tabClassName, 'tant-tab')}
                 tabDrag={tabDrag}
                 tabRender={tabRender || ((tab: RC_TAB, node: ReactNode) => defaultTabRender(tab, node, props))}
-                addNode={addNode ?? <TabAddRender onContextMenuClick={props.onTabContextMenuClick} disabled={tabList?.length >= maxTabNum} />}
-                moreNode={moreNode ?? defaultTabMoreRender(props)}
+                addNode={addNode === undefined ? <TabAddRender onContextMenuClick={props.onTabContextMenuClick} disabled={tabList?.length >= maxTabNum} /> : addNode}
+                moreNode={moreNode === undefined ? defaultTabMoreRender(props) : moreNode}
                 {...extraProps}
             />
         </div>
