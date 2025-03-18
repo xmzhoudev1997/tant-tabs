@@ -35,7 +35,9 @@ const Index: FC<Props> = ({
             <div className="tant-tab-oper" >
                 <div className={classNames(active ? 'tant-tab-oper-shadow-active' : '', 'tant-tab-oper-shadow')} />
                 <div className={classNames(active ? 'tant-tab-oper-bg-active' : '', 'tant-tab-oper-bg')}>
-                    <div onClick={e => e.stopPropagation()}>{operNode}</div>
+                    <div onMouseDownCapture={e => {
+                        e.stopPropagation();
+                    }} onClick={e => e.stopPropagation()}>{operNode}</div>
                 </div>
                 <div className={classNames(active ? 'tant-tab-padding-active' : '', 'tant-tab-padding')} />
             </div>

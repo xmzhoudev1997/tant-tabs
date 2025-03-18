@@ -31,7 +31,7 @@ const Index: FC<Props> = ({
                 className="tant-more-tab-unfixed"
                 size="small"
                 onClick={(e: any) => {
-                    () => onContextMenuClick('fixed', tab)
+                    onContextMenuClick('fixed', tab)
                     e.stopPropagation();
                 }}
             />
@@ -44,7 +44,7 @@ const Index: FC<Props> = ({
                     className="tant-more-tab-close"
                     size="small"
                     onClick={(e: any) => {
-                        () => onContextMenuClick('close', tab)
+                        onContextMenuClick('close', tab)
                         e.stopPropagation();
                     }}
                 />

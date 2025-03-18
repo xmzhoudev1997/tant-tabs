@@ -25,4 +25,5 @@ export interface TABS_NAV extends RC_TABS_NAV {
     tabIconRender?: (tab: RC_TAB) => ReactNode;
     tabOperRender?: (tab: RC_TAB) => ReactNode;
     tabTipRender?: (tab: RC_TAB) => ReactNode;
+    onFilter?: (tab: RC_TAB, kwd: string) => boolean;
   }

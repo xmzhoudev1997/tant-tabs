@@ -1,6 +1,6 @@
 
 // @ts-nocheck
-import { Dropdown, Button, Search, Empty } from '@tant/ui-next';
+import { Dropdown, Button, Search, Empty, ActionMenu } from '@tant/ui-next';
 import React, { FC } from 'react';
 import { RC_TAB } from '@tant/rc-tabs';
 import useData from './hook';
@@ -61,25 +61,25 @@ const Index: FC<Props> = ({
         }
     </div>
     return (
-        <Dropdown
+        <ActionMenu
             trigger={["click"]}
             menu={{
                 items: [],
             }}
             open={open}
-            onVisibleChange={(v: boolean) => {
+            onOpenChange={(v: boolean) => {
                 setOpen(v);
                 if (v) {
                     setKwd('');
                 }
             }}
             dropdownRender={() => dropdownContent}
-        >
-            <Button
-                icon={<TaArrowDown />}
-                type="text"
-            />
-        </Dropdown>
+            container={
+                <Button
+                    icon={<TaArrowDown />}
+                    type="text"
+                />}
+        />
     );
 }
 
