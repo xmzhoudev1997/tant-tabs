@@ -11,12 +11,12 @@ export default (
     const [open, setOpen] = useState(false);
     const scrollRef = useRef(null);
     const [container, setContainer] = useState(null);
-    const filterList = useMemo(() => props.tabList?.filter((d: RC_TAB) => !kwd?.trim() || (props.onFilter ? props.onFilter(d, kwd) : pinyinMatch.match(d.label, kwd))), [kwd, props.tabList]);
+    const filterList = useMemo(() => props.tabList?.filter((d: RC_TAB) => props.onFilter ? props.onFilter(d, kwd) : !kwd?.trim() || pinyinMatch.match(d.label, kwd)), [kwd, props.tabList]);
     useTabsDrag({
         container,
         dragClass: 'tant-more-tab-drag',
         draggingClass: 'tant-more-tab-dragging',
-        onDragEnd: props.onDrag,
+        onDragEnd: (v1, v2) => props.onDrag ? props.onDrag(v1, v2, 'extra') : null,
         asix: 'y',
         dragStartTrigger: 5,
     })
